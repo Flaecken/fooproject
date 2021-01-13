@@ -1,23 +1,24 @@
 pipeline {
     agent any
-    stages {
-        stage('Checkout') {
+        stages {
+            stage('Checkout') {
+                steps {
+                git 'https://github.com/Flaecken/fooproject.git'
+            }
+        }
+        stage('Build') {
             steps {
-            git 'https://github.com/Flaecken/fooproject.git'
+                bat "mvn compile"
+            }
         }
-    }
-    stage('Build') {
-        steps {
-            bat "mvn compile"
-        }
-    }
-    stage('Test') {
-        steps {
-            bat "mvn test"
-        }
-        post {
-            always {
-                junit '**/TEST*.xml'
+        stage('Test') {
+            steps {
+                bat "mvn test"
+            }
+            post {
+                always {
+                    junit '**/TEST*.xml'
+                }
             }
         }
     }
