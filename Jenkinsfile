@@ -1,11 +1,7 @@
 pipeline {
     agent any
         stages {
-            stage('Checkout') {
-                steps {
-                git 'https://github.com/Flaecken/fooproject'
-            }
-        }
+
         stage('Build') {
             steps {
                 bat "mvn compile"
