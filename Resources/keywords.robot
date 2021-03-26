@@ -19,14 +19,14 @@ Search for car
     Confirm date search
 
 Insert date
-    input text              id:start    value="03-06"
-    input text              id:end      value="03-10"
+    input text              id:start    value="04-06"
+    input text              id:end      value="04-10"
 
 Submit search
     press keys              xpath://*[@id="continue"]   RETURN
 
 Confirm date search
-    wait until page contains    Selected trip dates: 2021-03-06 – 2021-03-10
+    wait until page contains    Selected trip dates: 2021-04-06 – 2021-04-10
 
 #Select car (Kräver login)
 #    press keys              xpath://*[@id="bookQ7pass7"]    RETURN
